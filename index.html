@@ -1,1 +1,338 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#21150f">
+  <meta name="description" content="Discover Kastoori Family Restaurant in Risali, Bhilai. Explore our menu and contact us to place an order.">
+  <title>Kastoori Family Restaurant | Bhilai</title>
+  <style>
+    :root {
+      --dark: #21150f;
+      --brown: #38251b;
+      --gold: #d9a441;
+      --cream: #fff8ed;
+      --muted: #b9a99b;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: #292018;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 17px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand { font-size: 25px; font-weight: bold; color: var(--gold); }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { font-size: 14px; }
+    nav a:hover { color: var(--gold); }
+    .hero {
+      min-height: 490px;
+      padding: 85px 8%;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(20,12,8,.94), rgba(20,12,8,.48)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+    .hero-content { max-width: 650px; }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    h1 { font-size: clamp(42px, 7vw, 76px); margin: 15px 0; }
+    .hero p { color: #eee0d0; font-size: 18px; line-height: 1.7; }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #21150f;
+      padding: 14px 23px;
+      border: 0;
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 10px 8px 0 0;
+    }
+    .btn.secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid var(--gold);
+    }
+    section { padding: 65px 8%; }
+    .section-title { text-align: center; margin-bottom: 35px; }
+    .section-title h2 { font-size: 34px; margin-bottom: 8px; }
+    .section-title p { color: #76675b; }
+    .menu-tools {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+    .menu-tools input {
+      width: min(100%, 330px);
+      padding: 12px;
+      border: 1px solid #d8cabb;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+    .filter {
+      padding: 11px 17px;
+      border: 1px solid #c7b49f;
+      border-radius: 30px;
+      background: white;
+    }
+    .filter.active { background: var(--dark); color: white; }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .dish {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px #38251b12;
+    }
+    .dish img { width: 100%; height: 165px; object-fit: cover; }
+    .dish-info { padding: 17px; }
+    .dish h3 { margin: 0 0 8px; }
+    .dish p { color: #76675b; font-size: 14px; min-height: 38px; }
+    .dish-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .price { color: #9b6816; font-weight: bold; font-size: 14px; }
+    .add {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      border-radius: 5px;
+      padding: 9px 12px;
+    }
+    .cart {
+      background: #f1e7d9;
+      border-radius: 10px;
+      padding: 22px;
+      margin-top: 35px;
+      text-align: center;
+    }
+    .cart p { color: #76675b; }
+    .about {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+    .about p {
+      max-width: 720px;
+      margin: auto;
+      line-height: 1.8;
+      color: #e1d3c5;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .contact-card {
+      background: white;
+      padding: 25px;
+      border-radius: 9px;
+      box-shadow: 0 5px 20px #38251b12;
+    }
+    .contact-card h3 { color: #95651b; }
+    footer {
+      background: #160e09;
+      color: #c9b9a9;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+    @media(max-width:650px) {
+      header { align-items: flex-start; flex-direction: column; }
+      nav { gap: 14px; }
+      .hero { min-height: 420px; padding: 65px 7%; }
+      section { padding: 50px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#">KASTOORI</a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">Welcome to Kastoori</div>
+      <h1>Good Food.<br>Good Moments.</h1>
+      <p>Enjoy delicious food and warm hospitality at Kastoori Family Restaurant, Bhilai.</p>
+      <a class="btn" href="#menu">Explore Menu</a>
+      <a class="btn secondary" href="#contact">Find Us</a>
+    </div>
+  </div>
+
+  <section id="menu">
+    <div class="section-title">
+      <div class="eyebrow">Something delicious</div>
+      <h2>Explore Our Menu</h2>
+      <p>Browse a selection of dishes. Contact us for current prices and availability.</p>
+    </div>
+
+    <div class="menu-tools">
+      <input id="search" type="search" placeholder="Search dishes..." aria-label="Search dishes">
+      <button class="filter active" data-category="All">All</button>
+      <button class="filter" data-category="Indian">Indian</button>
+      <button class="filter" data-category="Chinese">Chinese</button>
+      <button class="filter" data-category="Snacks">Snacks</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+
+    <div class="cart">
+      <h3>Your food selection: <span id="count">0</span></h3>
+      <p id="cartItems">No dishes selected yet.</p>
+      <button class="btn" onclick="sendOrder()">Enquire on WhatsApp</button>
+      <p><small>This sends an enquiry, not a confirmed order. The restaurant must confirm availability and prices.</small></p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="eyebrow">Our story</div>
+    <h2>About Kastoori</h2>
+    <p>
+      Kastoori Family Restaurant welcomes guests in Risali, Bhilai.
+      Whether you're planning a meal with family or catching up with friends,
+      we look forward to serving you. Visit us and discover the experience.
+    </p>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <div class="eyebrow">Come visit us</div>
+      <h2>Find Kastoori</h2>
+      <p>We look forward to welcoming you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Our Address</h3>
+        <p>28, Krishna Talkies Road, beside Church Risali, Ashish Nagar West, Bhilai, Chhattisgarh 490006.</p>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kastoori+Family+Restaurant+Risali+Bhilai">Get Directions</a>
+      </div>
+      <div class="contact-card">
+        <h3>Call Us</h3>
+        <p>Speak to the restaurant for enquiries and reservations.</p>
+        <a class="btn" href="tel:+919685392112">Call Restaurant</a>
+      </div>
+      <div class="contact-card">
+        <h3>WhatsApp</h3>
+        <p>Contact us about menu items, prices and orders.</p>
+        <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919685392112">Message Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Kastoori Family Restaurant, Bhilai.</p>
+  <p>Made with care for food lovers.</p>
+</footer>
+
+<script>
+  const dishes = [
+    {name:"Paneer Kadai",category:"Indian",description:"A flavourful paneer preparation.",image:"https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=700&q=80"},
+    {name:"Dal Tadka",category:"Indian",description:"A comforting Indian lentil dish.",image:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=700&q=80"},
+    {name:"Chicken Biryani",category:"Indian",description:"Aromatic rice with spices and chicken.",image:"https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80"},
+    {name:"Chicken Kadhai",category:"Indian",description:"A rich, spicy chicken preparation.",image:"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=700&q=80"},
+    {name:"Veg Schezwan Noodles",category:"Chinese",description:"Noodles tossed in a spicy sauce.",image:"https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80"},
+    {name:"Paneer Chilli",category:"Chinese",description:"A popular Indo-Chinese favourite.",image:"https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=700&q=80"},
+    {name:"Hara Bhara Kebab",category:"Snacks",description:"A vegetarian snack with herbs and spices.",image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"},
+    {name:"French Fries",category:"Snacks",description:"Crispy potato fries.",image:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=80"}
+  ];
+
+  let selectedCategory = "All";
+  let cart = [];
+
+  function renderMenu() {
+    const search = document.getElementById("search").value.toLowerCase();
+    const filtered = dishes.filter(d =>
+      (selectedCategory === "All" || d.category === selectedCategory) &&
+      d.name.toLowerCase().includes(search)
+    );
+
+    document.getElementById("menuGrid").innerHTML = filtered.length
+      ? filtered.map(d => `
+        <article class="dish">
+          <img src="${d.image}" alt="${d.name}" loading="lazy">
+          <div class="dish-info">
+            <h3>${d.name}</h3>
+            <p>${d.description}</p>
+            <div class="dish-bottom">
+              <span class="price">Ask for price</span>
+              <button class="add" onclick="addToCart('${d.name}')">+ Add</button>
+            </div>
+          </div>
+        </article>`).join("")
+      : "<p>No dishes found. Try another search.</p>";
+  }
+
+  function addToCart(name) {
+    cart.push(name);
+    document.getElementById("count").textContent = cart.length;
+    document.getElementById("cartItems").textContent = cart.join(", ");
+  }
+
+  function sendOrder() {
+    if (!cart.length) {
+      alert("Please select at least one dish first.");
+      return;
+    }
+    const message = "Hello Kastoori! I would like to enquire about: " +
+      cart.join(", ") +
+      ". Please share the prices and availability.";
+    window.open("https://wa.me/919685392112?text=" + encodeURIComponent(message), "_blank");
+  }
+
+  document.querySelectorAll(".filter").forEach(button => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+      selectedCategory = button.dataset.category;
+      renderMenu();
+    });
+  });
+
+  document.getElementById("search").addEventListener("input", renderMenu);
+  document.getElementById("year").textContent = new Date().getFullYear();
+  renderMenu();
+</script>
+
+</body>
+</html>
